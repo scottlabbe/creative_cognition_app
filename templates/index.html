@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Creative Style</title>
+  <!-- For Flask, ensure this path is correct in your environment -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <!-- For responsive design on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Optional: Include a Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" 
+    rel="stylesheet" 
+  />
+</head>
+<body>
+  <header>
+    <h1>Your Creative Style</h1>
+    <h2 class="subtitle">How am I Creative?</h2>
+  </header>
+  <main class="container">
+    <p class="intro">
+      This assessment is designed to evaluate the ways in which you prefer to be creative, 
+      <strong><em><u>or your individual creative cognitive style.</u></em></strong>
+    </p>
+    <p class="intro">
+      This includes a questionnaire to understand your individual preferences for learning and 
+      applying knowledge, as well as open-ended exercises intended to understand your ability 
+      to generate original ideas, solve problems creatively, and think flexibly.
+    </p>
+    <p class="intro">
+      The results will offer insight into your individual creativity, to hopefully empower 
+      you to tailor your approach to creative tasks, collaborate more effectively with others, 
+      and ultimately, feel more comfortable applying creativity in your work or everyday life.
+    </p>
+    <p>
+      <!-- Button-like link to start the questionnaire -->
+      <a href="{{ url_for('start') }}" class="btn-primary">Start the questionnaire</a>
+    </p>
+  </main>
+</body>
+</html>

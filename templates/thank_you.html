@@ -1,0 +1,15 @@
+<!-- templates/thank_you.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>All Done!</h1>
+  <p>Thank you for completing the questionnaire.</p>
+  <p>Your submission ID is: <strong>{{ submission_id }}</strong></p>
+  <p>You may safely close this window or return to the <a href="{{ url_for('index') }}">home page</a>.</p>
+</body>
+</html>

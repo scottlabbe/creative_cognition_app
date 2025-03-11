@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Creative Style Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{{ overall_style }}</h1>
+  </header>
+  
+  <main class="container">
+    <!-- Scores Section -->
+    <section class="scores">
+      <h2>Your Scores</h2>
+      <div class="score-details">
+        <div class="score-item">
+          <h3>Learning Preference</h3>
+          <p><strong>Score:</strong> {{ learning_score }}</p>
+          <p><strong>Direction:</strong> {{ learning_direction }}</p>
+          <p><strong>Strength:</strong> {{ learning_strength }}</p>
+        </div>
+        
+        <div class="score-item">
+          <h3>Application Preference</h3>
+          <p><strong>Score:</strong> {{ application_score }}</p>
+          <p><strong>Direction:</strong> {{ application_direction }}</p>
+          <p><strong>Strength:</strong> {{ application_strength }}</p>
+        </div>
+      </div>
+      
+      <!-- Plot -->
+      <div class="plot-section">
+        <h3>Your Style Position</h3>
+        <img src="{{ url_for('static', filename=plot_filename) }}" alt="Learning vs Application Chart">
+      </div>
+    </section>
+
+    <!-- Style Description Section -->
+    <section class="style-description">
+      <h2>Your Creative Style Profile</h2>
+      <p>{{ style_description }}</p>
+      <p>{{ preference_description }}</p>
+    </section>
+
+    <!-- Working Relationships Section -->
+    <section class="working-relationships">
+      <h2>Working with Others</h2>
+      <div class="relationship-grid">
+        <div class="relationship-card">
+          <h3>With Intuitive Types</h3>
+          <p>{{ working_relationships.intuitives }}</p>
+        </div>
+        <div class="relationship-card">
+          <h3>With Conceptual Types</h3>
+          <p>{{ working_relationships.conceptuals }}</p>
+        </div>
+        <div class="relationship-card">
+          <h3>With Pragmatic Types</h3>
+          <p>{{ working_relationships.pragmatists }}</p>
+        </div>
+        <div class="relationship-card">
+          <h3>With Deductive Types</h3>
+          <p>{{ working_relationships.deductives }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strengths and Weaknesses Section -->
+    <section class="strengths-weaknesses">
+      <h2>Your Style's Characteristics</h2>
+      <div class="characteristics-grid">
+        <div class="strengths">
+          <h3>Strengths</h3>
+          <ul>
+            {% for strength in strengths %}
+              <li>{{ strength }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="weaknesses">
+          <h3>Growth Areas</h3>
+          <ul>
+            {% for weakness in weaknesses %}
+              <li>{{ weakness }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

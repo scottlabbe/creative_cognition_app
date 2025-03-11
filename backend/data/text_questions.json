@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "totalQuestions": 4,
+    "categories": [
+      "No category"
+    ],
+    "type": "text"
+  },
+  "questions": [
+    {
+      "id": "Q31",
+      "category": "No category",
+      "question": "List every use you can think of for this object.",
+      "responseType": "text"
+    },
+    {
+      "id": "Q32",
+      "category": "No category",
+      "question": "List every problem you think is causing the issue in this image.",
+      "responseType": "text"
+    },
+    {
+      "id": "Q33",
+      "category": "No category",
+      "question": "Take a look at the product below, list every way you think it could be improved.",
+      "responseType": "text"
+    },
+    {
+      "id": "Q34",
+      "category": "No category",
+      "question": "Take a look at the image below. Take a moment to imagine what's going on in this image. Once you have a good grasp on the situation, write a short story about what is depicted. Length, style, perspective are all up to you!",
+      "responseType": "text"
+    }
+  ],
+  "questionsByCategory": {
+    "No category": [
+      {
+        "id": "Q31",
+        "category": "No category",
+        "question": "List every use you can think of for this object.",
+        "responseType": "text"
+      },
+      {
+        "id": "Q32",
+        "category": "No category",
+        "question": "List every problem you think is causing the issue in this image.",
+        "responseType": "text"
+      },
+      {
+        "id": "Q33",
+        "category": "No category",
+        "question": "Take a look at the product below, list every way you think it could be improved.",
+        "responseType": "text"
+      },
+      {
+        "id": "Q34",
+        "category": "No category",
+        "question": "Take a look at the image below. Take a moment to imagine what's going on in this image. Once you have a good grasp on the situation, write a short story about what is depicted. Length, style, perspective are all up to you!",
+        "responseType": "text"
+      }
+    ]
+  }
+}

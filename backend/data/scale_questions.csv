@@ -1,0 +1,31 @@
+id,category,question,scale_min,scale_max,scoretype
+Q1,Learning,I enjoy spending time alone with my thoughts.,1,7,reverse
+Q2,Learning,I am able to see patterns and connections that others might miss.,1,7,normal
+Q3,Learning,I learn best when I can connect new information to real-life examples.,1,7,normal
+Q4,Learning,I often find myself daydreaming and imagining different possibilities.,1,7,normal
+Q5,Learning,I am more likely to be influenced by the emotional aspects of a learning experience.,1,7,normal
+Q6,Learning,I learn best by reflecting and analyzing.,1,7,reverse
+Q7,Learning,I enjoy experimenting and discovering things on my own.,1,7,normal
+Q8,Learning,I am comfortable with ambiguity and enjoy exploring open-ended questions.,1,7,reverse
+Q9,Learning,I am drawn to abstract concepts and theoretical frameworks.,1,7,reverse
+Q10,Learning,I am skilled at finding ways to improve existing systems and processes.,1,7,reverse
+Q11,Learning,I am more motivated to learn when I can see the practical applications of what I'm learning.,1,7,reverse
+Q12,Learning,I find it easy to learn from my mistakes.,1,7,reverse
+Q13,Learning,"I get more out of hearing from experts in a field, either through books, lectures, or online courses",1,7,reverse
+Q14,Learning,I trust my gut feelings when learning something new,1,7,reverse
+Q15,Learning,I enjoy analyzing and dissecting information to gain a deeper understanding,1,7,reverse
+Q16,Application,I am more likely to reflect on and synthesize information before applying it,1,7,reverse
+Q17,Application,I prefer to follow established procedures rather than create new ones.,1,7,reverse
+Q18,Application,"When solving a problem, I tend to brainstorm a wide range of ideas.",1,7,normal
+Q19,Application,I am meticulous and pay close attention to details.,1,7,reverse
+Q20,Application,I am skilled at visualizing and imagining future possibilities.,1,7,normal
+Q21,Application,I often rely on my gut feeling or intuition when making decisions.,1,7,normal
+Q22,Application,I prefer to have a set schedule and routine.,1,7,reverse
+Q23,Application,I carefully consider all options before making a decision.,1,7,reverse
+Q24,Application,"I enjoy generating a wide range of ideas, even if they seem impractical at first.",1,7,normal
+Q25,Application,I am energized by brainstorming sessions and collaborative idea generation.,1,7,normal
+Q26,Application,I prefer to focus on refining and improving existing ideas or systems.,1,7,reverse
+Q27,Application,I am drawn to tasks that involve problem-solving and troubleshooting,1,7,reverse
+Q28,Application,I am more comfortable working with concrete and tangible things.,1,7,reverse
+Q29,Application,I am more likely to prioritize originality and novelty over practicality.,1,7,normal
+Q30,Application,I am more interested in exploring the potential of an idea than its immediate feasibility.,1,7,normal

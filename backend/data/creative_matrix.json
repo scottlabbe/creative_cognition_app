@@ -1,0 +1,259 @@
+{
+  "learningStyles": [
+    {
+      "id": "intuitive",
+      "name": "Intuitive Creative Style",
+      "description": "An Intuitive Creative is driven by a deep curiosity and thrive on gut feelings and spontaneous bursts of inspiration. They trust their inner compass, often reaching conclusions through leaps of logic and embracing unconventional ideas. This style thrives in environments where exploration and experimentation into white spaces is encouraged and rewarded. \n",
+      "preferences": [
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your strong preference suggests you're a hands-on learner who enjoys experimenting and actively figuring things out."
+        },
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your strong preference for ideation points to enjoying thinking big, imagining and developing new understanding. "
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your solid preference suggests you value learning by doing and appreciate the lessons learned from direct interaction."
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your solid preference suggests you enjoy using your knowledge to develop original ideas and find satisfaction in the process of creation."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your slight preference suggests that you value enjoy delving into the details, but you're not opposed to trying things out yourself."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your slight preference for ideation points to enjoying thinking big, while also understanding the contraints of what it takes to get something done. "
+        }
+      ],
+      "workingWith": {
+        "intuitive": "While this may be the most comfortable and likely quite fun, diversifying your thought partnership with other types of Creative people will help you all realize and implement the ideas you freely generate. If only with other intuitives, deadlines, visual aids and tangible frameworks will be required to make progress. ",
+        "conceptual": "While both styles prioritize ideas, Intuitives might find Conceptual Creatives too focused on logic and structure. To collaborate effectively, Intuitives should be prepared to explain the \"why\" behind their ideas and engage in open-ended discussions exploring the theoretical underpinnings and implications of their ideas.",
+        "pragmatic": "While they may be on  \"opposites\" , these styles can complement each other well. Pragmatics can help refine and implement ideas, while Intuitives can bring fresh perspectives and to inspire divergent thinking. Intuitives should be prepared to share ideas in a structured, organized and visual way demonstrating the practical applications of their concepts.",
+        "deductive": "This pairing can be dynamic and energetic if handled correctly. The focus on action and moving forward from Actives, compliment to the big thinking of Intuitives. However, Intuitives may need to be patient with Active Creatives' desire for immediate action."
+      },
+      "strengths": "Being an intuitive creative you rely heavily on, as the name suggests, gut feelings and subconscious insights during the creative process. \n\nOften has spontaneous \"aha\" moments or breakthroughs. \nComfortable with ambiguity and uncertainty. \nOpen to unexpected connections and possibilities. \nMay be drawn to artistic and expressive fields.",
+      "weaknesses": "While thinking big and generating ideas comes naturally, applying those ideas within rigid structures requiring detailed thinking might be more difficult. \n\nMay struggle with explaining the reasoning behind their ideas.\nCan become overwhelmed by too much structure or detail.\nMay overlook practical considerations or potential risks."
+    },
+    {
+      "id": "conceptual",
+      "name": "Conceptual Creative Style",
+      "description": "Conceptual Creatives are the architects of ideas. They possess a deep understanding of theories and concepts, which they use to fuel their creative imagination. Being comfortable with logic, analysis, and structure, they carefully construct their creations with a clear understanding of the underlying principles. They excel at connecting seemingly disparate concepts and developing innovative solutions to complex problems.",
+      "preferences": [
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your strong preference suggests that you enjoy delving into the details, immersing yourself in a topic seeking deep understanding."
+        },
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your strong preference for ideation points to enjoying thinking big, imagining and developing new understanding. "
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your solid preference suggests you value thoughtful reflection and enjoy taking the time to fully understand a subject before moving forward."
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your solid preference suggests you find satisfaction in using knowledge to develop innovative ideas and enjoy exploring new perspectives."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your slight preference suggests that you value enjoy delving into the details, but you're not opposed to trying things out yourself."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "ideation",
+          "description": "Your slight preference for ideation points to enjoying thinking big, while also understanding the contraints of what it takes to get something done. "
+        }
+      ],
+      "workingWith": {
+        "intuitive": "While both styles prioritize ideas, Conceptual Creatives might find Intuitives too unstructured and unpredictable. To collaborate effectively, Conceptual Creatives should prepare themselves to be open to exploring unconventional approaches, suspending some of that logical thinking that usually leads them to the right answer eventually.",
+        "conceptual": "Collaborating with like-minded individuals can be stimulating, but remember that diverse perspectives can spark even greater innovation. Designing in moments to seek out challenge and feedback can be helpful to not get stuck in theory and abstract models, while encouraging thinking about practicality. ",
+        "pragmatic": "This pairing can be highly productive. Conceptual Creatives can provide the vision and framework, while Pragmatic Creatives can refine and implement the ideas in a practical way. However, this pairing could benefit from scheduling brainstorming sessions where both parties are encouraged to explore unconventional ideas without judgment, injecting a dose of ambiguity and \"white space\" thinking into the process.",
+        "deductive": "While they may be on “opposites”, these two styles can complement each other well. Conceptual Creatives may need to be patient with Deductive Creatives' desire for immediate action, while Deductive Creatives should appreciate the need for thorough planning and analysis. Clearly defining roles and responsibilities can ensure a smooth workflow and avoid misunderstandings."
+      },
+      "strengths": "Conceptual Creatives are skilled at connecting ideas from different fields and synthesizing them into new and meaningful frameworks. Especially when they can immerse themselves in complex, multi-faceted problems. \n\nApproaches creativity with a strong emphasis on logic, reason, and analysis.\nExcels at identifying patterns, connections, and underlying principles.\nEnjoys developing frameworks, models, and systems.\nSkilled at problem-solving and critical thinking.",
+      "weaknesses": "While they excel at deep thinking, they can sometimes get lost in the abyss. A gentle reminder to come up for air, embrace the present moment and seek additional perspectives might be needed now and then. Can overthink or overanalyze, leading to \"analysis paralysis.\" May become attached to their ideas and resistant to change. Might struggle with ambiguity and spontaneity."
+    },
+    {
+      "id": "pragmatic",
+      "name": "Pragmatic Creative Style",
+      "description": "Pragmatic Creatives are grounded thinkers, approaching creativity with a logical and analytical mindset. They excel at evaluating ideas, identifying patterns, and developing structured plans to bring their visions to life. Where they stand apart is taking existing ideas and refining them, improving upon them, and finding practical applications. They are resourceful and flexible, navigating challenges and adjust their approach as needed.",
+      "preferences": [
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your strong preference suggests you appreciate a structured and logical approach to learning, enjoying the process of analyzing information."
+        },
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": "Your strong preference for productions points to enjoying the challenge of taking an idea and making it a reality, finding practical solutions, and constantly improving how things work."
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your solid preference suggests you value careful consideration and thoughtful analysis, preferring to fully understand a concept before applying it.\n"
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": "Your solid preference for productions points to enjoying the challenge of taking an idea and making it a reality, finding practical solutions, and constantly improving how things work."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "contemplation",
+          "description": "Your slight preference suggests that you value enjoy delving into the details, but you're not opposed to trying things out yourself."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": "Your slight preference suggests you appreciate bringing ideas to fruition, but also recognize the value of exploration and experimentation in the process."
+        }
+      ],
+      "workingWith": {
+        "intuitive": "While they may be “opposites”, these two styles can complement each other well. In an effective collaboration, Pragmatic Creatives can help Intuitives refine and implement their ideas, while Intuitives can bring fresh perspectives and inspire outside the box thinking. Creating a shared visual roadmap can be an effective way to track progress and ensure alignment on goals and milestones.",
+        "conceptual": "This pairing is a natural partnership and can be highly productive. Conceptual Creatives can provide the vision and framework, while Pragmatic Creatives can refine and implement the ideas in a practical way. Establishing clear communication channels and regular check-ins can help maintain momentum and address any roadblocks.",
+        "pragmatic": "While this pairing offers strong organizational skills and a focus on implementation, remember that incorporating diverse perspectives can lead to more innovative and well-rounded solutions. Setting aside dedicated time for brainstorming and ideation can help avoid getting bogged down in the details too early in the process.",
+        "deductive": "This combination can be effective if both styles are clear on their roles and responsibilities. Pragmatic Creatives can help Deductive Creatives channel their energy and focus on achievable goals. Encouraging the Deductive Creative to document their experiments and findings can facilitate analysis and learning for both parties."
+      },
+      "strengths": "Highly organized, detail-oriented, and strategic in their thinking, they easily apply critical thinking required for planning and executing ideas. Resourceful and adaptable, they excel at bringing creative concepts down to earth and finding real-world applications. \n\nCan focus on the details to make that next improvement, constantly refining and improving\nResourceful and adaptable, able to work within constraints\nSkilled at finding practical applications for creative concepts.\nStrong sense of practicality and feasibility.",
+      "weaknesses": "Their focus on practicality can sometimes overshadow the bigger picture or the potential for groundbreaking creativity, sometimes hesitating to venture into uncharted territory.\n\nMay be hesitant to take risks or explore truly novel ideas or become too focused on the practical \nMight struggle with ambiguity and open-endedness\nFind it hard to focus and grasp onto concepts to abstract or distant from tangible reality"
+    },
+    {
+      "id": "deductive",
+      "name": "Deductive Creative Style",
+      "description": "Deductive Creatives are the embodiment of \"learning by doing.\" They possess an insatiable curiosity and a drive to explore the world through direct experience. Like scientists conducting experiments, they're constantly testing, analyzing, and refining their ideas through hands-on exploration. They're not afraid to take risks, embrace challenges, and learn from their mistakes.",
+      "preferences": [
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your strong preference suggests you're a kinesthetic learner who thrives on hands-on activities and enjoys learning through trial and error."
+        },
+        {
+          "strengthLevel": "strong",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": "Your strong preference suggests you're focused on achieving concrete outcomes and producing high-quality work. You value precision and efficiency."
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your solid preference suggests you value practical skills and enjoy applying knowledge in tangible ways, finding direct experience to be effective."
+        },
+        {
+          "strengthLevel": "solid",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": " Your solid preference suggests you enjoy refining your work, take pride in your ability to deliver results, and are motivated by accomplishment."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "learningMethod",
+          "dimensionValue": "experience",
+          "description": "Your slight preference suggests you appreciate experience, but also recognize the importance of theoretical knowledge and conceptual understanding."
+        },
+        {
+          "strengthLevel": "slight",
+          "dimensionType": "knowledgeApplication",
+          "dimensionValue": "production",
+          "description": "Your slight preference suggests you appreciate producing tangible results, but also recognize the value of experimentation and finding new ways to innovate."
+        }
+      ],
+      "workingWith": {
+        "intuitive": "Deductive Creatives should appreciate the Intuitive's need for space and exploration, while Intuitives may need to be patient with Deductive Creatives' desire for immediate action. Establishing a clear framework for experimentation and defining specific goals can help guide the exploration and ensure productive collaboration.",
+        "conceptual": "Deductive Creatives should appreciate the Conceptual Creative's need for thorough planning and analysis, while Conceptual Creatives may need to be patient with Deductive Creatives' desire for immediate action. Creating a visual timeline or flowchart to illustrate the process and demonstrate how experimentation fits into the overall plan can foster understanding and collaboration.",
+        "pragmatic": "This combination can be effective if both styles are clear on their roles and responsibilities. Pragmatic Creatives can help Deductive Creatives channel their energy and focus on achievable goals. Encouraging the Deductive Creative to share their insights and discoveries regularly, and to document their experiments, can facilitate analysis and learning, while the Pragmatic Creative can offer guidance on prioritizing tasks and setting realistic expectations.",
+        "deductive": "While this pairing can be a whirlwind of action and experimentation, remember that incorporating diverse perspectives can lead to more strategic and well-rounded outcomes. Establishing a system for documenting experiments and sharing knowledge can help avoid redundant efforts and maximize learning."
+      },
+      "strengths": "Deductive Creatives are adaptable, resourceful, and results-oriented. They excel at problem-solving, testing ideas, and learning through experimentation. They're passionate and enthusiastic, with a strong work ethic.\n\nAdaptable, resourceful, and results-oriented.\nDriven by action, experimentation, and hands-on learning.\nThrives in dynamic environments and enjoys taking risks.\nExcels at bringing ideas to life and seeing tangible results.",
+      "weaknesses": "While Deductive Creatives excel at hands-on learning, they may be impulsive and jump into action without sufficient planning. They can be impatient with delays and struggle with tasks that require sustained focus.\n\nCan be impulsive and jump into action without sufficient planning, that may become delays or setbacks causing frustration\nMight struggle with tasks that require sustained focus or attention to detail.\nMay become impatient with theoretical discussions or long-term planning.\n"
+    }
+  ],
+  "preferenceStrengths": [
+    {
+      "id": "strong",
+      "name": "Strong Preference",
+      "description": "Most pronounced tendency"
+    },
+    {
+      "id": "solid",
+      "name": "Solid Preference",
+      "description": "Moderate tendency"
+    },
+    {
+      "id": "slight",
+      "name": "Slight Preference",
+      "description": "Mild tendency"
+    }
+  ],
+  "preferenceDimensions": [
+    {
+      "id": "learningMethod",
+      "name": "Learning Method",
+      "values": [
+        {
+          "id": "experience",
+          "name": "Learn Through Experience",
+          "description": "Hands-on learning approach"
+        },
+        {
+          "id": "contemplation",
+          "name": "Learn Through Contemplation",
+          "description": "Theoretical learning approach"
+        }
+      ]
+    },
+    {
+      "id": "knowledgeApplication",
+      "name": "Knowledge Application",
+      "values": [
+        {
+          "id": "ideation",
+          "name": "Apply Knowledge for Ideation",
+          "description": "Using knowledge to create new ideas"
+        },
+        {
+          "id": "production",
+          "name": "Apply Knowledge for Production",
+          "description": "Using knowledge to implement ideas"
+        }
+      ]
+    }
+  ]
+}

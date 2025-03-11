@@ -1,0 +1,356 @@
+{
+  "metadata": {
+    "totalQuestions": 30,
+    "categories": [
+      "Learning",
+      "Application"
+    ],
+    "scaleRange": {
+      "min": 1,
+      "max": 7
+    },
+    "type": "scale",
+    "scoreTypes": {
+      "normal": "Higher response adds to score",
+      "reverse": "Higher response subtracts from score"
+    }
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "category": "Learning",
+      "question": "I enjoy spending time alone with my thoughts.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q2",
+      "category": "Learning",
+      "question": "I am able to see patterns and connections that others might miss.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q3",
+      "category": "Learning",
+      "question": "I learn best when I can connect new information to real-life examples.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q4",
+      "category": "Learning",
+      "question": "I often find myself daydreaming and imagining different possibilities.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q5",
+      "category": "Learning",
+      "question": "I am more likely to be influenced by the emotional aspects of a learning experience.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q6",
+      "category": "Learning",
+      "question": "I learn best by reflecting and analyzing.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q7",
+      "category": "Learning",
+      "question": "I enjoy experimenting and discovering things on my own.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q8",
+      "category": "Learning",
+      "question": "I am comfortable with ambiguity and enjoy exploring open-ended questions.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q9",
+      "category": "Learning",
+      "question": "I am drawn to abstract concepts and theoretical frameworks.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q10",
+      "category": "Learning",
+      "question": "I am skilled at finding ways to improve existing systems and processes.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q11",
+      "category": "Learning",
+      "question": "I am more motivated to learn when I can see the practical applications of what I'm learning.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q12",
+      "category": "Learning",
+      "question": "I find it easy to learn from my mistakes.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q13",
+      "category": "Learning",
+      "question": "I get more out of hearing from experts in a field, either through books, lectures, or online courses",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q14",
+      "category": "Learning",
+      "question": "I trust my gut feelings when learning something new",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q15",
+      "category": "Learning",
+      "question": "I enjoy analyzing and dissecting information to gain a deeper understanding",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q16",
+      "category": "Application",
+      "question": "I am more likely to reflect on and synthesize information before applying it",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q17",
+      "category": "Application",
+      "question": "I prefer to follow established procedures rather than create new ones.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q18",
+      "category": "Application",
+      "question": "When solving a problem, I tend to brainstorm a wide range of ideas.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q19",
+      "category": "Application",
+      "question": "I am meticulous and pay close attention to details.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q20",
+      "category": "Application",
+      "question": "I am skilled at visualizing and imagining future possibilities.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q21",
+      "category": "Application",
+      "question": "I often rely on my gut feeling or intuition when making decisions.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q22",
+      "category": "Application",
+      "question": "I prefer to have a set schedule and routine.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q23",
+      "category": "Application",
+      "question": "I carefully consider all options before making a decision.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q24",
+      "category": "Application",
+      "question": "I enjoy generating a wide range of ideas, even if they seem impractical at first.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q25",
+      "category": "Application",
+      "question": "I am energized by brainstorming sessions and collaborative idea generation.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q26",
+      "category": "Application",
+      "question": "I prefer to focus on refining and improving existing ideas or systems.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q27",
+      "category": "Application",
+      "question": "I am drawn to tasks that involve problem-solving and troubleshooting",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q28",
+      "category": "Application",
+      "question": "I am more comfortable working with concrete and tangible things.",
+      "scoreType": "reverse"
+    },
+    {
+      "id": "Q29",
+      "category": "Application",
+      "question": "I am more likely to prioritize originality and novelty over practicality.",
+      "scoreType": "normal"
+    },
+    {
+      "id": "Q30",
+      "category": "Application",
+      "question": "I am more interested in exploring the potential of an idea than its immediate feasibility.",
+      "scoreType": "normal"
+    }
+  ],
+  "questionsByCategory": {
+    "Learning": [
+      {
+        "id": "Q1",
+        "question": "I enjoy spending time alone with my thoughts.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q2",
+        "question": "I am able to see patterns and connections that others might miss.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q3",
+        "question": "I learn best when I can connect new information to real-life examples.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q4",
+        "question": "I often find myself daydreaming and imagining different possibilities.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q5",
+        "question": "I am more likely to be influenced by the emotional aspects of a learning experience.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q6",
+        "question": "I learn best by reflecting and analyzing.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q7",
+        "question": "I enjoy experimenting and discovering things on my own.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q8",
+        "question": "I am comfortable with ambiguity and enjoy exploring open-ended questions.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q9",
+        "question": "I am drawn to abstract concepts and theoretical frameworks.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q10",
+        "question": "I am skilled at finding ways to improve existing systems and processes.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q11",
+        "question": "I am more motivated to learn when I can see the practical applications of what I'm learning.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q12",
+        "question": "I find it easy to learn from my mistakes.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q13",
+        "question": "I get more out of hearing from experts in a field, either through books, lectures, or online courses",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q14",
+        "question": "I trust my gut feelings when learning something new",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q15",
+        "question": "I enjoy analyzing and dissecting information to gain a deeper understanding",
+        "scoreType": "reverse"
+      }
+    ],
+    "Application": [
+      {
+        "id": "Q16",
+        "question": "I am more likely to reflect on and synthesize information before applying it",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q17",
+        "question": "I prefer to follow established procedures rather than create new ones.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q18",
+        "question": "When solving a problem, I tend to brainstorm a wide range of ideas.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q19",
+        "question": "I am meticulous and pay close attention to details.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q20",
+        "question": "I am skilled at visualizing and imagining future possibilities.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q21",
+        "question": "I often rely on my gut feeling or intuition when making decisions.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q22",
+        "question": "I prefer to have a set schedule and routine.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q23",
+        "question": "I carefully consider all options before making a decision.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q24",
+        "question": "I enjoy generating a wide range of ideas, even if they seem impractical at first.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q25",
+        "question": "I am energized by brainstorming sessions and collaborative idea generation.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q26",
+        "question": "I prefer to focus on refining and improving existing ideas or systems.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q27",
+        "question": "I am drawn to tasks that involve problem-solving and troubleshooting",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q28",
+        "question": "I am more comfortable working with concrete and tangible things.",
+        "scoreType": "reverse"
+      },
+      {
+        "id": "Q29",
+        "question": "I am more likely to prioritize originality and novelty over practicality.",
+        "scoreType": "normal"
+      },
+      {
+        "id": "Q30",
+        "question": "I am more interested in exploring the potential of an idea than its immediate feasibility.",
+        "scoreType": "normal"
+      }
+    ]
+  }
+}

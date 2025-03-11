@@ -1,0 +1,65 @@
+<!-- templates/question.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Question {{ q_index + 1 }} of {{ total_questions }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" 
+    rel="stylesheet" 
+  />
+</head>
+<body>
+  <header>
+    <h1>Question {{ q_index + 1 }} of {{ total_questions }}</h1>
+  </header>
+  
+  <main class="container">
+    <p class="question-text">{{ question_text }}</p>
+    
+    <form method="POST">
+      <p class="scale-prompt">Please select a value (1–7):</p>
+      
+      <!-- Button Scale -->
+      <div class="button-scale">
+        <button type="button" class="scale-button" onclick="selectButton(this, 1)">1</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 2)">2</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 3)">3</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 4)">4</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 5)">5</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 6)">6</button>
+        <button type="button" class="scale-button" onclick="selectButton(this, 7)">7</button>
+      </div>
+
+      <div class="scale-endpoints">
+        <span>Strongly<br>Disagree</span>
+        <span>Strongly<br>Agree</span>
+      </div>
+
+      <!-- Hidden input to store the selected value -->
+      <!-- Note we changed name="score" to name="scale_response" -->
+      <input type="hidden" id="scale_response" name="scale_response" value="" required>
+      
+      <button type="submit" class="btn-primary submit-btn">Next</button>
+    </form>
+  </main>
+
+  <script>
+    function selectButton(button, value) {
+      // Remove selected class from all buttons
+      document.querySelectorAll('.scale-button').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+      
+      // Add selected class to clicked button
+      button.classList.add('selected');
+      
+      // Update hidden input value
+      document.getElementById('scale_response').value = value;
+    }
+  </script>
+</body>
+</html>
