@@ -2,7 +2,10 @@
 
 import { Question, SubmissionResponse, QuestionResponse, Results } from '../types/questions';
 
-const API_BASE_URL = 'http://127.0.0.1:5001/api';
+// This will use the relative path in production or the dev server in development
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? '/api'  // Production: use relative path
+  : 'http://127.0.0.1:5001/api';  // Development: use localhost
 
 export const api = {
   // Fetch all questions
