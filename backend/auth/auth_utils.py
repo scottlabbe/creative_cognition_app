@@ -4,6 +4,7 @@ import jwt as pyjwt
 import bcrypt
 import datetime
 import os
+from datetime import timezone  # Add timezone for compatibility
 from flask import current_app, request, jsonify
 from functools import wraps
 
@@ -31,16 +32,21 @@ def verify_password(plain_password, hashed_password):
 def generate_token(username):
     """Generate a JWT token for the admin user."""
     # Reduce token expiration to 4 hours for better security
-    expiration = datetime.datetime.now(
-        datetime.UTC) + datetime.timedelta(hours=4)
+    try:
+        # Try with datetime.UTC if available (Python 3.11+)
+        now = datetime.datetime.now(datetime.UTC)
+        expiration = now + datetime.timedelta(hours=4)
+    except AttributeError:
+        # Fallback for older Python versions
+        now = datetime.datetime.now(timezone.utc)
+        expiration = now + datetime.timedelta(hours=4)
 
     payload = {
         'sub': username,
-        'iat': datetime.datetime.now(datetime.UTC),
+        'iat': now,
         'exp': expiration,
         'role': 'admin',  # Add role claim for additional validation
-        'jti':
-        os.urandom(8).hex()  # Add unique token ID to prevent replay attacks
+        'jti': os.urandom(8).hex()  # Add unique token ID to prevent replay attacks
     }
 
     token = pyjwt.encode(payload, JWT_SECRET, algorithm='HS256')
