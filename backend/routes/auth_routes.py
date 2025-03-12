@@ -1,5 +1,5 @@
 # backend/routes/auth_routes.py
-
+import os
 from flask import Blueprint, request, jsonify
 from auth.auth_utils import verify_password, generate_token, ADMIN_USERNAME, ADMIN_PASSWORD_HASH
 
@@ -20,17 +20,6 @@ def login():
     # Check if credentials match
     if username != ADMIN_USERNAME or not verify_password(
             password, ADMIN_PASSWORD_HASH):
-
-@auth_bp.route('/debug-env', methods=['GET'])
-def debug_env():
-    """Debug endpoint to check if environment variables are set."""
-    env_check = {
-        "username_set": ADMIN_USERNAME is not None and len(ADMIN_USERNAME) > 0,
-        "password_hash_set": ADMIN_PASSWORD_HASH is not None and len(ADMIN_PASSWORD_HASH) > 0,
-        "jwt_secret_set": os.environ.get('SECRET_KEY') is not None and len(os.environ.get('SECRET_KEY', '')) > 0
-    }
-    return jsonify(env_check)
-
         return jsonify({"error": "Invalid credentials"}), 401
 
     # Generate token
@@ -39,26 +28,25 @@ def debug_env():
     return jsonify({"token": token, "username": username})
 
 
+@auth_bp.route('/debug-env', methods=['GET'])
+def debug_env():
+    """Debug endpoint to check if environment variables are set."""
+    env_check = {
+        "username_set":
+        ADMIN_USERNAME is not None and len(ADMIN_USERNAME) > 0,
+        "password_hash_set":
+        ADMIN_PASSWORD_HASH is not None and len(ADMIN_PASSWORD_HASH) > 0,
+        "jwt_secret_set":
+        os.environ.get('SECRET_KEY') is not None
+        and len(os.environ.get('SECRET_KEY', '')) > 0
+    }
+    return jsonify(env_check)
+
+
 @auth_bp.route('/verify', methods=['GET'])
 def verify_token():
     """Verify a JWT token from the Authorization header."""
     # Extract token from Authorization header
-    auth_header = request.headers.get('Authorization')
-    if not auth_header or not auth_header.startswith('Bearer '):
-        return jsonify({"valid": False, "error": "Missing or invalid Authorization header"}), 401
-    
-    token = auth_header.split(' ')[1]
-    if not token:
-        return jsonify({"valid": False, "error": "Token not provided"}), 401
-    
-    # Validate token
-    from auth.auth_utils import validate_token
-    payload = validate_token(token)
-    if not payload:
-        return jsonify({"valid": False, "error": "Invalid or expired token"}), 401
-    
-    return jsonify({"valid": True, "username": payload.get('sub')})
-def verify_token():
     auth_header = request.headers.get('Authorization')
 
     if not auth_header:
