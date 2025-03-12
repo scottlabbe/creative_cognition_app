@@ -2,7 +2,7 @@
 
 import sqlite3
 
-DATABASE_FILE = "my_database.db"  # or wherever your DB is
+DATABASE_FILE = "../db/my_database.db"  # Use standardized location
 
 def get_connection():
     """Return a new DB connection. Caller should close() it."""

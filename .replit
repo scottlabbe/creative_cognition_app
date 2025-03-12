@@ -4,7 +4,7 @@ entrypoint = "backend/app.py"
 # Main run command
 [run]
 # This command starts the backend server
-args = ["bash", "-c", "cd backend && python app.py"]
+run = "bash -c 'cd backend && python app.py & cd frontend && npm start'"
 
 [env]
 PORT = "8080"
