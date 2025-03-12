@@ -1,0 +1,28 @@
+# Entry point for the application
+entrypoint = "backend/app.py"
+
+# Main run command
+[run]
+# This command starts the backend server
+args = ["bash", "-c", "cd backend && python app.py"]
+
+[env]
+PORT = "8080"
+
+# Deployment settings
+[deployment]
+run = ["python", "backend/app.py"]
+deploymentTarget = "cloudrun"
+
+# Packager configuration
+[packager]
+language = "python3"
+
+[packager.features]
+enabledForHosting = true
+packageSearch = true
+guessImports = true
+
+# Hide certain files from the UI
+[hidden]
+files = ["package-lock.json", "**/__pycache__", ".env"]

@@ -3,7 +3,7 @@
 import os
 import uuid
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from logic.scoring import compute_scores, categorize_scores, get_detailed_profile
 from plots.generate_plot import generate_plot
@@ -13,7 +13,10 @@ from logic.db_helpers import get_connection
 from routes.auth_routes import auth_bp
 from routes.admin_routes import admin_bp
 
-app = Flask(__name__)
+app = Flask(__name__, 
+           static_folder='static',  # Keep your current static folder for API assets
+           static_url_path='/static')  # Keep the static path as is
+
 # In app.py
 CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)  # Enable CORS for all routes
 
@@ -209,9 +212,26 @@ def get_results(submission_id):
             "error": "Could not generate results"
         }), 500
 
+# Add this after your other routes, but before running the app
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    # First try to serve from your static folder
+    if path.startswith('static/') or path.startswith('api/'):
+        return app.send_static_file(path)
+    # Then try to serve from frontend build folder if it exists
+    frontend_path = os.path.join('../frontend/build', path)
+    if os.path.exists(frontend_path) and os.path.isfile(frontend_path):
+        return send_from_directory('../frontend/build', path)
+    # Default to serving index.html from frontend build
+    return send_from_directory('../frontend/build', 'index.html')
+
+
 # Register the admin and auth blueprints
 app.register_blueprint(auth_bp)
 app.register_blueprint(admin_bp)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    # Use the PORT environment variable for Replit
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port)
