@@ -13,12 +13,15 @@ from logic.db_helpers import get_connection
 from routes.auth_routes import auth_bp
 from routes.admin_routes import admin_bp
 
-app = Flask(__name__, 
-           static_folder='static',  # Keep your current static folder for API assets
-           static_url_path='/static')  # Keep the static path as is
+app = Flask(
+    __name__,
+    static_folder='static',  # Keep your current static folder for API assets
+    static_url_path='/static')  # Keep the static path as is
 
 # In app.py
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)  # Enable CORS for all routes
+CORS(app, resources={r"/api/*": {
+    "origins": "*"
+}}, supports_credentials=True)  # Enable CORS for all routes
 
 # Keep your existing config/setup code
 SCALE_QUESTIONS_PATH = "data/scale_questions.json"
@@ -34,6 +37,7 @@ text_questions = text_data["questions"]
 
 # Combine them into one list to keep a single question flow
 all_questions = scale_questions + text_questions
+
 
 def create_tables_if_not_exists():
     """Creates tables from your schema.sql if you haven't already, or just ensure existence."""
@@ -62,18 +66,18 @@ def create_tables_if_not_exists():
     conn.commit()
     conn.close()
 
+
 # Call table-creation on startup
 create_tables_if_not_exists()
 
 # 2. ROUTES
 
+
 @app.route("/api/questions", methods=["GET"])
 def get_questions():
     """Return all questions data"""
-    return jsonify({
-        "questions": all_questions,
-        "total": len(all_questions)
-    })
+    return jsonify({"questions": all_questions, "total": len(all_questions)})
+
 
 @app.route("/api/start", methods=["POST"])
 def start_submission():
@@ -85,17 +89,16 @@ def start_submission():
 
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("""
+    cur.execute(
+        """
         INSERT INTO submissions (submission_id, user_name, user_email)
         VALUES (?, ?, ?)
     """, (submission_id, user_name, user_email))
     conn.commit()
     conn.close()
 
-    return jsonify({
-        "submission_id": submission_id,
-        "status": "success"
-    })
+    return jsonify({"submission_id": submission_id, "status": "success"})
+
 
 @app.route("/api/submit-response", methods=["POST"])
 def submit_response():
@@ -108,25 +111,25 @@ def submit_response():
 
     conn = get_connection()
     cur = conn.cursor()
-    
+
     if numeric_response is not None:
-        cur.execute("""
+        cur.execute(
+            """
             INSERT INTO submission_responses (submission_id, question_id, numeric_response)
             VALUES (?, ?, ?)
         """, (submission_id, question_id, numeric_response))
     else:
-        cur.execute("""
+        cur.execute(
+            """
             INSERT INTO submission_responses (submission_id, question_id, text_response)
             VALUES (?, ?, ?)
         """, (submission_id, question_id, text_response))
-    
+
     conn.commit()
     conn.close()
 
-    return jsonify({
-        "status": "success",
-        "message": "Response recorded"
-    })
+    return jsonify({"status": "success", "message": "Response recorded"})
+
 
 @app.route("/api/complete/<submission_id>", methods=["POST"])
 def complete_submission(submission_id):
@@ -134,30 +137,32 @@ def complete_submission(submission_id):
     try:
         conn = get_connection()
         cur = conn.cursor()
-        
+
         # Check if submission exists
-        cur.execute("""
+        cur.execute(
+            """
             SELECT submission_id FROM submissions
             WHERE submission_id = ?
-        """, (submission_id,))
-        
+        """, (submission_id, ))
+
         if not cur.fetchone():
             conn.close()
             return jsonify({
                 "status": "error",
                 "message": "Submission not found"
             }), 404
-        
+
         # Update submission to mark as complete
-        cur.execute("""
+        cur.execute(
+            """
             UPDATE submissions
             SET is_complete = 1
             WHERE submission_id = ?
-        """, (submission_id,))
-        
+        """, (submission_id, ))
+
         conn.commit()
         conn.close()
-        
+
         return jsonify({
             "status": "success",
             "message": "Submission marked as complete"
@@ -169,55 +174,70 @@ def complete_submission(submission_id):
             "message": "Could not complete submission"
         }), 500
 
+
 @app.route("/api/results/<submission_id>")
 def get_results(submission_id):
     """Get computed results for a submission"""
     try:
         # Get scores and labels
         scores = compute_scores(submission_id, all_questions)
-        labels = categorize_scores(scores["learning_score"], scores["application_score"])
-        
+        labels = categorize_scores(scores["learning_score"],
+                                   scores["application_score"])
+
         # Get detailed profile
         detailed_profile = get_detailed_profile(submission_id, all_questions)
         if detailed_profile is None:
-            return jsonify({
-                "error": "Could not generate detailed profile"
-            }), 500
-        
+            return jsonify({"error":
+                            "Could not generate detailed profile"}), 500
+
         # Generate plot
         try:
-            plot_filename = generate_plot(
-                scores["application_score"],
-                scores["learning_score"],
-                submission_id
-            )
+            plot_filename = generate_plot(scores["application_score"],
+                                          scores["learning_score"],
+                                          submission_id)
         except Exception as e:
             print(f"Error generating plot: {str(e)}")
             plot_filename = None
-        
+
         # Return structured response
         return jsonify({
             "scores": {
                 "learning_score": scores["learning_score"],
                 "application_score": scores["application_score"]
             },
-            "labels": labels,
-            "detailed_profile": detailed_profile,
-            "plot_url": f"/static/plots/{plot_filename}" if plot_filename else None
+            "labels":
+            labels,
+            "detailed_profile":
+            detailed_profile,
+            "plot_url":
+            f"/static/plots/{plot_filename}" if plot_filename else None
         })
-        
+
     except Exception as e:
         print(f"Error generating results: {str(e)}")
-        return jsonify({
-            "error": "Could not generate results"
-        }), 500
+        return jsonify({"error": "Could not generate results"}), 500
 
-# Add this after your other routes, but before running the app
+
+@app.route('/static/js/<filename>')
+def serve_js(filename):
+    return send_from_directory('../frontend/build/static/js', filename)
+
+
+@app.route('/static/css/<filename>')
+def serve_css(filename):
+    return send_from_directory('../frontend/build/static/css', filename)
+
+
+@app.route('/static/media/<filename>')
+def serve_media(filename):
+    return send_from_directory('../frontend/build/static/media', filename)
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
     # First try to serve from your static folder
-    if path.startswith('static/') or path.startswith('api/'):
+    if path.startswith('api/'):
         return app.send_static_file(path)
     # Then try to serve from frontend build folder if it exists
     frontend_path = os.path.join('../frontend/build', path)

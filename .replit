@@ -1,28 +1,20 @@
-# Entry point for the application
-entrypoint = "backend/app.py"
+run = "npm run start"
+modules = ["nodejs-23", "python-3.12"]
 
-# Main run command
-[run]
-# This command starts the backend server
-run = "bash -c 'cd backend && python app.py & cd frontend && npm start'"
-
-[env]
-PORT = "8080"
-
-# Deployment settings
 [deployment]
-run = ["python", "backend/app.py"]
-deploymentTarget = "cloudrun"
+run = ["sh", "-c", "npm run start"]
 
-# Packager configuration
-[packager]
-language = "python3"
+[[ports]]
+localPort = 5001
+externalPort = 80
 
-[packager.features]
-enabledForHosting = true
-packageSearch = true
-guessImports = true
+[workflows]
 
-# Hide certain files from the UI
-[hidden]
-files = ["package-lock.json", "**/__pycache__", ".env"]
+[[workflows.workflow]]
+name = "Run"
+mode = "sequential"
+author = 7378827
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./run.sh"
