@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'wouter';
 import { Card, CardContent } from "../components/ui/card";
@@ -7,13 +8,16 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl">
-        <CardContent className="pt-6">
-          <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-          Creative Cognitive Style Assessment
-          </h1>
-          <h2 className="text-2xl font-medium mb-6">How am I Creative?</h2>
+        <CardContent className="pt-6 text-center">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/Untitled-1-Results%20Page%20Title%20(1).png" 
+              alt="Your Creative Style" 
+              className="max-w-full h-auto"
+            />
+          </div>
 
-          <div className="prose prose-slate dark:prose-invert mb-6">
+          <div className="prose prose-slate dark:prose-invert mb-6 mx-auto">
             <p className="mb-6">
               This assessment is designed to evaluate the ways in which you prefer to be creative,{' '}
               or your individual creative cognitive style.
@@ -34,7 +38,7 @@ const HomePage: React.FC = () => {
 
           <Button
             size="lg"
-            className="w-full sm:w-auto"
+            className="mx-auto"
             asChild
           >
             <Link href="/start">Start the questionnaire</Link>
