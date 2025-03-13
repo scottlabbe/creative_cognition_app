@@ -19,9 +19,10 @@ app = Flask(
     static_url_path='/static')  # Keep the static path as is
 
 CORS(app, resources={r"/api/*": {
-    "origins": "*",
+    "origins": ["http://localhost:3000", "https://*.replit.dev", "https://*.repl.co"],
     "supports_credentials": True,
-    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "allow_headers": ["Content-Type", "Authorization"]
 }})
 
 # Keep your existing config/setup code

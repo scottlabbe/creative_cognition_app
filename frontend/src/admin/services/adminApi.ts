@@ -65,12 +65,24 @@ export const adminApi = {
     console.log("With credentials:", { username, password });
 
     try {
-      return await publicFetch(`${API_BASE_URL}/auth/login`, {
+      // Use absolute path to ensure we're requesting from the same domain
+      const apiUrl = `${window.location.origin}/api/admin/auth/login`;
+      console.log("Sending login request to:", apiUrl);
+      
+      return await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
+        credentials: "include",
+      }).then(response => {
+        if (!response.ok) {
+          return response.json().catch(() => ({})).then(errorData => {
+            throw new Error(errorData.error || "API request failed");
+          });
+        }
+        return response.json();
       });
     } catch (error) {
       console.error("Login request failed:", error);
