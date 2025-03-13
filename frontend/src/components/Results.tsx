@@ -81,7 +81,7 @@ const ResultsPage: React.FC = () => {
               
               <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center gap-3">
-                  <CreativeTypeIcon style={cognitiveStyle} size={96} />
+                  <CreativeTypeIcon style={cognitiveStyle} size={75} />
                   <span className="text-xl font-semibold uppercase">{results.labels.overall_style}</span>
                 </div>
                 <p className="text-muted-foreground text-center max-w-3xl">
@@ -104,7 +104,7 @@ const ResultsPage: React.FC = () => {
               <Card className="border border-orange-300 shadow-md">
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold mb-2 text-primary">
-                    You have a {results.labels.learning_strength} preference {results.labels.learning_direction}
+                    You have a {results.labels.learning_strength} preference to learn through {results.labels.learning_direction}
                   </h3>
                   <p className="text-muted-foreground">
                     {results.detailed_profile.preference_description}
@@ -116,7 +116,7 @@ const ResultsPage: React.FC = () => {
               <Card className="border border-orange-300 shadow-md">
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold mb-2 text-primary">
-                    You have a {results.labels.application_strength} preference {results.labels.application_direction}
+                    You have a {results.labels.application_strength} preference to apply knowledge for {results.labels.application_direction}
                   </h3>
                   <p className="text-muted-foreground">
                     {results.detailed_profile.application_preference_description}

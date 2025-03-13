@@ -1,5 +1,7 @@
 // src/admin/services/adminApi.ts
 
+console.log("API_BASE_URL at load time:", "/api/admin");
+
 // Define response types for authentication
 interface LoginResponse {
   token: string;
@@ -26,7 +28,9 @@ const authFetch = async (url: string, options: RequestInit = {}) => {
   }
 
   // Ensure URL is absolute
-  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+  const fullUrl = url.startsWith("http")
+    ? url
+    : `${window.location.origin}${url}`;
 
   const headers = {
     ...options.headers,
@@ -50,8 +54,10 @@ const authFetch = async (url: string, options: RequestInit = {}) => {
 // Helper function for non-authenticated API calls
 const publicFetch = async (url: string, options: RequestInit = {}) => {
   // Ensure URL is absolute
-  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
-  
+  const fullUrl = url.startsWith("http")
+    ? url
+    : `${window.location.origin}${url}`;
+
   const response = await fetch(fullUrl, {
     ...options,
     credentials: "include",
@@ -74,7 +80,7 @@ export const adminApi = {
     try {
       const apiUrl = `${window.location.origin}/api/admin/auth/login`;
       console.log("Sending login request to:", apiUrl);
-      
+
       return await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -82,11 +88,14 @@ export const adminApi = {
         },
         body: JSON.stringify({ username, password }),
         credentials: "include",
-      }).then(response => {
+      }).then((response) => {
         if (!response.ok) {
-          return response.json().catch(() => ({})).then(errorData => {
-            throw new Error(errorData.error || "API request failed");
-          });
+          return response
+            .json()
+            .catch(() => ({}))
+            .then((errorData) => {
+              throw new Error(errorData.error || "API request failed");
+            });
         }
         return response.json();
       });
