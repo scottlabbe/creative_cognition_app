@@ -9,11 +9,13 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl">
         <CardContent className="pt-6 text-center">
+          <h1 className="sr-only">Your Creative Style</h1>
           <div className="flex justify-center mb-8">
             <img 
-              src ="/Untitled-1-Results%20Page%20Title%20(1).png" 
+              src="/Untitled-1-Results%20Page%20Title%20(1).png" 
               alt="Your Creative Style"
               className="max-w-full h-auto"
+              title="Your Creative Style"
             />
           </div>
 
