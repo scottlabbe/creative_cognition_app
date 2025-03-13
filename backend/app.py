@@ -18,10 +18,11 @@ app = Flask(
     static_folder='static',  # Keep your current static folder for API assets
     static_url_path='/static')  # Keep the static path as is
 
-# In app.py
 CORS(app, resources={r"/api/*": {
-    "origins": "*"
-}}, supports_credentials=True)  # Enable CORS for all routes
+    "origins": "*",
+    "supports_credentials": True,
+    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+}})
 
 # Keep your existing config/setup code
 SCALE_QUESTIONS_PATH = "data/scale_questions.json"
@@ -233,12 +234,26 @@ def serve_media(filename):
     return send_from_directory('../frontend/build/static/media', filename)
 
 
+# Register the admin and auth blueprints
+app.register_blueprint(auth_bp)
+app.register_blueprint(admin_bp)
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
+    print(f"Catch-all route accessed with path: {path}")  # Debug logging
     # First try to serve from your static folder
+    # Special case for admin/login - redirect to frontend
+    if path == 'admin/login':
+        print("Admin login path detected, serving index.html for SPA routing")
+        return send_from_directory('../frontend/build', 'index.html')
+        
+    # API paths should have already been handled by blueprints
     if path.startswith('api/'):
-        return app.send_static_file(path)
+        print(f"WARNING: API path {path} reached catch-all route!")
+        return jsonify({"error": f"API endpoint not found: /{path}"}), 404
+        
     # Then try to serve from frontend build folder if it exists
     frontend_path = os.path.join('../frontend/build', path)
     if os.path.exists(frontend_path) and os.path.isfile(frontend_path):
@@ -246,10 +261,6 @@ def serve(path):
     # Default to serving index.html from frontend build
     return send_from_directory('../frontend/build', 'index.html')
 
-
-# Register the admin and auth blueprints
-app.register_blueprint(auth_bp)
-app.register_blueprint(admin_bp)
 
 if __name__ == "__main__":
     # Use the PORT environment variable for Replit

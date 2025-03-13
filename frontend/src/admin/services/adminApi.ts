@@ -61,7 +61,7 @@ const publicFetch = async (url: string, options: RequestInit = {}) => {
 export const adminApi = {
   // Authentication methods
   async login(username: string, password: string): Promise<LoginResponse> {
-    console.log("Attempting login to:", `${API_BASE_URL}/auth/login`);
+    console.log("Attempting login to:", `/api/admin/auth/login`);
     console.log("With credentials:", { username, password });
 
     try {
