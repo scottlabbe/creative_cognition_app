@@ -17,16 +17,10 @@ const HomePage: React.FC = () => {
             />
           </div>
 
-          <div className="prose prose-slate dark:prose-invert mb-6 mx-auto">
+          <div className="prose prose-slate dark:prose-invert mb-6 mx-auto text-center">
             <p className="mb-6">
               This assessment is designed to evaluate the ways in which you prefer to be creative,{' '}
               or your individual creative cognitive style.
-            </p>
-            
-            <p className="mb-6">
-              This includes a questionnaire to understand your individual preferences for learning and 
-              applying knowledge, as well as open-ended exercises intended to understand your ability 
-              to generate original ideas, solve problems creatively, and think flexibly.
             </p>
             
             <p className="mb-8">
