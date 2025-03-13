@@ -16,10 +16,18 @@
 </head>
 <body>
   <header>
-    <h1>Your Creative Style</h1>
-    <h2 class="subtitle">How am I Creative?</h2>
+    <!-- Replaced text title with image -->
+    <h1 class="sr-only">Your Creative Style</h1>
+    <div class="title-image-container">
+      <img 
+        src="/static/Untitled-1-Results%20Page%20Title%20(1).png" 
+        alt="Your Creative Style" 
+        class="title-image"
+        title="Your Creative Style"
+      />
+    </div>
   </header>
-  <main class="container">
+  <main class="container text-center">
     <p class="intro">
       This assessment is designed to evaluate the ways in which you prefer to be creative, 
       <strong><em><u>or your individual creative cognitive style.</u></em></strong>
@@ -34,7 +42,7 @@
       you to tailor your approach to creative tasks, collaborate more effectively with others, 
       and ultimately, feel more comfortable applying creativity in your work or everyday life.
     </p>
-    <p>
+    <p class="text-center">
       <!-- Button-like link to start the questionnaire -->
       <a href="{{ url_for('start') }}" class="btn-primary">Start the questionnaire</a>
     </p>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'wouter';
 import { Card, CardContent } from "../components/ui/card";
@@ -20,20 +19,21 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="prose prose-slate dark:prose-invert mb-8 mx-auto text-center">
-            <p className="mb-8">
+            <p className="mb-8 text-center">
               The results will offer insight into your individual creativity, to hopefully empower 
               you to tailor your approach to creative tasks, collaborate more effectively with others, 
               and ultimately, feel more comfortable applying creativity in your work or everyday life.
             </p>
           </div>
 
-          <Button
-            size="lg"
-            className="mx-auto"
-            asChild
-          >
-            <Link href="/start">Start the questionnaire</Link>
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              size="lg"
+              asChild
+            >
+              <Link href="/start">Start the questionnaire</Link>
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>
