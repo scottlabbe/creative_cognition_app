@@ -14,8 +14,8 @@ interface VerifyResponse {
 // Get the token from localStorage
 const getToken = () => localStorage.getItem("admin_token");
 
-// API base URL
-const API_BASE_URL = "/api/admin";
+// Get base URL dynamically from current origin
+const getApiBaseUrl = () => `${window.location.origin}/api/admin`;
 
 // Helper function for authenticated API calls
 const authFetch = async (url: string, options: RequestInit = {}) => {
@@ -25,18 +25,22 @@ const authFetch = async (url: string, options: RequestInit = {}) => {
     throw new Error("No authentication token");
   }
 
+  // Ensure URL is absolute
+  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+
   const headers = {
     ...options.headers,
     Authorization: `Bearer ${token}`,
   };
 
-  const response = await fetch(url, {
+  const response = await fetch(fullUrl, {
     ...options,
     headers,
+    credentials: "include",
   });
 
   if (!response.ok) {
-    const errorData = await response.json();
+    const errorData = await response.json().catch(() => ({}));
     throw new Error(errorData.error || "API request failed");
   }
 
@@ -45,9 +49,12 @@ const authFetch = async (url: string, options: RequestInit = {}) => {
 
 // Helper function for non-authenticated API calls
 const publicFetch = async (url: string, options: RequestInit = {}) => {
-  const response = await fetch(url, {
+  // Ensure URL is absolute
+  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+  
+  const response = await fetch(fullUrl, {
     ...options,
-    credentials: "include", // Add this line
+    credentials: "include",
   });
 
   if (!response.ok) {
@@ -65,7 +72,6 @@ export const adminApi = {
     console.log("With credentials:", { username, password });
 
     try {
-      // Use absolute path to ensure we're requesting from the same domain
       const apiUrl = `${window.location.origin}/api/admin/auth/login`;
       console.log("Sending login request to:", apiUrl);
       
@@ -93,17 +99,17 @@ export const adminApi = {
   // Get all submissions with optional filtering
   async getSubmissions(filters = {}) {
     const queryParams = new URLSearchParams(filters as Record<string, string>);
-    return authFetch(`${API_BASE_URL}/submissions?${queryParams}`);
+    return authFetch(`/api/admin/submissions?${queryParams}`);
   },
 
   // Get details for a specific submission
   async getSubmissionDetail(submissionId: string) {
-    return authFetch(`${API_BASE_URL}/submissions/${submissionId}`);
+    return authFetch(`/api/admin/submissions/${submissionId}`);
   },
 
   // Simulate results with custom scores
   async simulateResults(learning_score: number, application_score: number) {
-    return authFetch(`${API_BASE_URL}/simulate`, {
+    return authFetch(`/api/admin/simulate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
