@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
         <CardContent className="pt-6 text-center">
           <div className="flex justify-center mb-8">
             <img 
-              src="/Your%20Creative%20Style.png" 
+              src="/Untitled-1-Results%20Page%20Title%20(1).png" 
               alt="Your Creative Style"
               className="max-w-full h-auto"
             />
