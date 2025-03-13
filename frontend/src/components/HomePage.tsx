@@ -12,8 +12,6 @@ const HomePage: React.FC = () => {
           <div className="flex justify-center mb-6">
             <img 
               src="/Untitled-1-Results%20Page%20Title%20(1).png" 
-              alt="Your Creative Style" 
-              className="max-w-full h-auto"
             />
           </div>
 
