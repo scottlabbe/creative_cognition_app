@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "es5",
@@ -15,15 +16,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "outDir": "./build",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/types/*": ["src/types/*"],
-      "@/hooks/*": ["src/hooks/*"]
+      "@/*": ["./*"],
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"],
+      "@/types/*": ["types/*"],
+      "@/hooks/*": ["hooks/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
 }
