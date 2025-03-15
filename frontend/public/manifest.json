@@ -1,6 +1,7 @@
+
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Creative Cognition",
+  "name": "Creative Cognition Assessment",
   "icons": [
     {
       "src": "favicon.ico",
