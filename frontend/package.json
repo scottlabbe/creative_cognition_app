@@ -1,3 +1,4 @@
+
 {
   "name": "frontend",
   "version": "0.1.0",
@@ -60,11 +61,5 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17"
-  },
-  "files": [
-    "src/",
-    "public/",
-    "build/",
-    "dist/"
-  ]
+  }
 }
