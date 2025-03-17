@@ -18,12 +18,19 @@ app = Flask(
     static_folder='static',  # Keep your current static folder for API assets
     static_url_path='/static')  # Keep the static path as is
 
-CORS(app, resources={r"/api/*": {
-    "origins": ["http://localhost:3000", "https://*.replit.dev", "https://*.repl.co"],
-    "supports_credentials": True,
-    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    "allow_headers": ["Content-Type", "Authorization"]
-}})
+CORS(app,
+     resources={
+         r"/api/*": {
+             "origins": [
+                 "http://localhost:3000", "https://*.replit.dev",
+                 "https://*.repl.co"
+             ],
+             "supports_credentials":
+             True,
+             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+             "allow_headers": ["Content-Type", "Authorization"]
+         }
+     })
 
 # Keep your existing config/setup code
 SCALE_QUESTIONS_PATH = "data/scale_questions.json"
@@ -182,24 +189,26 @@ def get_results(submission_id):
     """Get computed results for a submission"""
     try:
         # Get scores and labels
+        print(f"Computing scores for {submission_id}...")
         scores = compute_scores(submission_id, all_questions)
+        print(f"Scores computed: {scores}")
+
+        print("Categorizing scores...")
         labels = categorize_scores(scores["learning_score"],
                                    scores["application_score"])
+        print(f"Labels categorized: {labels}")
 
         # Get detailed profile
+        print("Getting detailed profile...")
         detailed_profile = get_detailed_profile(submission_id, all_questions)
+        print(f"Profile retrieved? {detailed_profile is not None}")
         if detailed_profile is None:
             return jsonify({"error":
                             "Could not generate detailed profile"}), 500
 
-        # Generate plot
-        try:
-            plot_filename = generate_plot(scores["application_score"],
-                                          scores["learning_score"],
-                                          submission_id)
-        except Exception as e:
-            print(f"Error generating plot: {str(e)}")
-            plot_filename = None
+        # Skip plot generation entirely
+        plot_filename = None
+        print("Skipped plot generation")
 
         # Return structured response
         return jsonify({
@@ -207,12 +216,9 @@ def get_results(submission_id):
                 "learning_score": scores["learning_score"],
                 "application_score": scores["application_score"]
             },
-            "labels":
-            labels,
-            "detailed_profile":
-            detailed_profile,
-            "plot_url":
-            f"/static/plots/{plot_filename}" if plot_filename else None
+            "labels": labels,
+            "detailed_profile": detailed_profile,
+            "plot_url": None  # Always return None for plot_url
         })
 
     except Exception as e:
@@ -249,12 +255,12 @@ def serve(path):
     if path == 'admin/login':
         print("Admin login path detected, serving index.html for SPA routing")
         return send_from_directory('../frontend/build', 'index.html')
-        
+
     # API paths should have already been handled by blueprints
     if path.startswith('api/'):
         print(f"WARNING: API path {path} reached catch-all route!")
         return jsonify({"error": f"API endpoint not found: /{path}"}), 404
-        
+
     # Then try to serve from frontend build folder if it exists
     frontend_path = os.path.join('../frontend/build', path)
     if os.path.exists(frontend_path) and os.path.isfile(frontend_path):

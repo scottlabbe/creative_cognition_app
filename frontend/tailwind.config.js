@@ -12,8 +12,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Roboto Slab', 'serif'],
-        heading: ['Raleway', 'sans-serif'],
+        sans: ["Roboto Slab", "serif"],
+        heading: ["Raleway", "sans-serif"],
       },
       colors: {
         // Pat's HSL color system
@@ -22,13 +22,19 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        // Add bronze color
+        bronze: {
+          DEFAULT: "#C5946D",
+          light: "#D5AC8C", // Lighter version for hover states or secondary elements
+          dark: "#A57755", // Darker version for focus states or primary elements
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           // Keeping your button colors
-          bg: '#1C2A3A',
-          hover: '#F39C12',
-          selected: '#D35400',
+          bg: "#1C2A3A",
+          hover: "#F39C12",
+          selected: "#D35400",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -72,8 +78,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography")
-  ],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

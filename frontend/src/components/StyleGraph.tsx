@@ -126,22 +126,22 @@ const StyleGraph: React.FC<StyleGraphProps> = ({
           {/* Quadrant labels */}
           <foreignObject x="75%" y="75%" width="20%" height="20%">
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-xs text-gray-600">Conceptual</span>
+              <span className="text-sm font-medium text-gray-700">Conceptual</span>
             </div>
           </foreignObject>
           <foreignObject x="5%" y="75%" width="20%" height="20%">
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-xs text-gray-600">Pragmatic</span>
+              <span className="text-sm font-medium text-gray-700">Pragmatic</span>
             </div>
           </foreignObject>
           <foreignObject x="5%" y="5%" width="20%" height="20%">
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-xs text-gray-600">Deductive</span>
+              <span className="text-sm font-medium text-gray-700">Deductive</span>
             </div>
           </foreignObject>
           <foreignObject x="75%" y="5%" width="20%" height="20%">
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-xs text-gray-600">Intuitive</span>
+              <span className="text-sm font-medium text-gray-700">Intuitive</span>
             </div>
           </foreignObject>
 
